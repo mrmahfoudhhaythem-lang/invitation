@@ -15,7 +15,7 @@ function base64Encode(str) {
 function generateInvitationLink(
   uid,
   guestName,
-  baseUrl = "https://invitation-blvs.onrender.com",
+  baseUrl = "https://invitation.onrender.com",
   useUidPath = false,
 ) {
   const encodedName = base64Encode(guestName);
