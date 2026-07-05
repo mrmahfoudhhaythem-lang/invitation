@@ -70,13 +70,35 @@ const LandingPage = ({ onOpenInvitation }) => {
           <motion.div variants={fadeUp} className={cn("text-center mb-8")}> 
             <p
               className={cn(
-                "text-sm sm:text-base uppercase tracking-[0.6em] text-rose-700/70 mb-3",
+                "text-base sm:text-lg uppercase tracking-[0.6em] text-rose-700/70 mb-3",
               )}
             >
               بسم الله الرحمن الرحيم
             </p>
             <p className={cn("mt-6 text-center text-base sm:text-lg text-rose-900/80")}>
-              {config.description}
+              بقلوب يغمرها الحب و السعادة تتشرف عائلتا
+              <span
+                className={cn(
+                  "block mt-3 rounded-md bg-rose-100/80 px-3 py-1 font-semibold text-rose-900",
+                )}
+              >
+                السيد أحمد الشرع و حرمه دليلة الشرع
+              </span>
+              <span
+                className={cn(
+                  "block mt-2 rounded-md bg-rose-100/80 px-3 py-1 font-semibold text-rose-900",
+                )}
+              >
+                السيد خميس محفوظ و حرمه السيدة وهيبة الطوزي
+              </span>
+              بدعوتكم لحضور حفل زفاف إبنيهما 
+              <span
+                className={cn(
+                  "block mt-2 rounded-md bg-rose-100/80 px-3 py-1 font-semibold text-rose-900",
+                )}
+              >
+             شاكر و شروق
+              </span>
             </p>
             <h6
               className={cn(
