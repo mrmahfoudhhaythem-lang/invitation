@@ -69,6 +69,8 @@ const guestList = [
   "Nagui Maatouk", 
   "Zied Jaoua",
   "Raghda Jouirou",
+  "Eya Bouguerra",
+  "Abir Haj Ayèch",
   "Guest",
 ];
 
