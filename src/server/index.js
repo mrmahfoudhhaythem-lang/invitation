@@ -11,6 +11,9 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { zValidator } from "@hono/zod-validator";
+import { serveStatic } from "@hono/node-server/serve-static";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 
 // Feature routes and schemas
 import { invitationRoutes, wishesRoutes } from "./features/index.js";
@@ -105,6 +108,32 @@ api.get("/:uid/stats", zValidator("param", uidParamSchema), async (c) => {
 // ============ Mount API Routes ============
 
 app.route("/api", api);
+
+// ============ Static Frontend (Production) ============
+
+if (process.env.NODE_ENV === "production") {
+  // Serve compiled Vite assets and static files from dist/
+  app.use("*", serveStatic({ root: "./dist" }));
+
+  // SPA fallback: always return index.html for non-API GET requests.
+  app.get("*", async (c) => {
+    if (c.req.path.startsWith("/api")) {
+      return c.notFound();
+    }
+
+    try {
+      const indexPath = path.join(process.cwd(), "dist", "index.html");
+      const html = await readFile(indexPath, "utf-8");
+      return c.html(html);
+    } catch (error) {
+      console.error("Error serving index.html:", error);
+      return c.text(
+        "Frontend build not found. Run the build step before starting the server.",
+        500,
+      );
+    }
+  });
+}
 
 // ============ Export ============
 

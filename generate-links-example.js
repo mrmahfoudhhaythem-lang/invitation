@@ -32,7 +32,7 @@ function generateInvitationLink(
 // ===== CONFIGURATION =====
 const INVITATION_UID = "chaker-chourouk-2026"; // Change this to your invitation UID
 //const BASE_URL = "http://localhost:5173"; // Change this to your production URL
-const BASE_URL = "invitation.onrender.com"
+const BASE_URL = "https://invitation-blvs.onrender.com"
 const USE_UID_PATH = false; // false = no DB mode, true = DB/API mode
 
 // List of guests
