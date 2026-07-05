@@ -71,7 +71,7 @@ const guestList = [
   "Raghda Jouirou",
   "Eya Bouguerra",
   "Abir Haj Ayèch",
-  "Guest",
+  "و لكم العاقبة قي الأفراح و المسرات",
 ];
 
 // ===== GENERATE LINKS =====
